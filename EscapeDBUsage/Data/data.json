@@ -1,0 +1,2393 @@
+[
+  {
+    "Name": "MasterData",
+    "Description": null,
+    "Nodes": [
+      {
+        "Name": "Location",
+        "Description": "Location refers to depots, breweries and other logistics sites.  Please note that breweries must have 2 locations; one for the production plant, and one for the depot.\r",
+        "Nodes": [
+          {
+            "Name": "Location",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Name",
+                "Description": "a short unique code to identify the location (usually the SAP plant code)\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Description",
+                "Description": "a longer more descriptive name for the location\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Short Code",
+                "Description": "the short description for the plant \r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location Type",
+                "Description": "describes the type of location: BREW - brewery (production part of the brewery), BDEP - wet depot (depot part of the brewery), DEP - dry depot, EXTW - external or buffer warehouse\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Country",
+                "Description": "short code to identify the country referred to. Not currently used\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Fixed Inventory Fulls [Pallet cubes]",
+                "Description": "the number of standard full-size pallets (called pallet cubes) that can be stored in the warehouse.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Fixed Inventory Empties [Pallet cubes]",
+                "Description": "the number of standard full-size pallets (called pallet cubes) that can be stored in the yard - this is for empty containers only.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Fixed Inventory Cellars[Hl]",
+                "Description": "total volume of liquid that can be stored in cellars (FV, SV and BBT)\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Inventory FV [Hl]",
+                "Description": "this is the maximum volume of liquid that can be stored in the FV cellar (assuming all combi vessels are configured as FVs)\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Inventory SV [Hl]",
+                "Description": "this is the maximum volume of liquid that can be stored in the SV cellar (assuming all combi vessels are configured as SVs)\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Inventory FVSV [Hl]",
+                "Description": "this is the maximum volume of liquid that can be stored in the FV and SV cellars.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Inventory BBT [Hl]",
+                "Description": "this is the maximum volume of liquid that can be stored in the bright beer tanks\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Throughput [Hl/wk]",
+                "Description": "this value represents warehouse handling capacity and is a simple value to show how much volume of sales, interdepot in and out, and deliveries a site can handle (in Hl per week)\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Cellars",
+                "Description": "a short unique code to identify the cellars at this site (if needed, otherwise empty)\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Stock Location",
+                "Description": "the Name of the location where production output is placed (usually the wet depot associated with this brewery)\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Holding Cost Factor",
+                "Description": "this value is no longer used and can be left blank.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Ferment Beer",
+        "Description": "Ferment beer is the term used to describe beer in Cellars and covers fermenting (FV) beer and maturing (SV) beer.\r",
+        "Nodes": [
+          {
+            "Name": "FermentBeer",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Name",
+                "Description": "a short unique code to identify the ferment beer (usually the SAP material number).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Description",
+                "Description": "a longer more descriptive name for the beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Short Code",
+                "Description": "the short description for the material.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Brand",
+                "Description": "the brand name of the beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "<Brewhouse name and location>",
+                "Description": "the remaining columns show each of the brewhouses that have been configured in the system.  Placing a ‘y’ in the column adds a record in the Brewhouse Process table as well as the ferment beer at location table , while a blank cell will result in the deletion of the record in the Brewhouse Process table, if it exists.  Be careful when using this function as you can potentially make a mess of the Brewhouse Process data!  If you have added a value, be sure to go to the Brewhouse Process table afterwards to finish populating the record.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Bright Beer",
+        "Description": "This is beer that has been filtered and is ready for packaging.\r",
+        "Nodes": [
+          {
+            "Name": "BrightBeer",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Name",
+                "Description": "a short unique code to identify the bright beer (usually the SAP material number).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Description",
+                "Description": "a longer more descriptive name for the beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Short Code",
+                "Description": "the short description for the material.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Brand",
+                "Description": "the brand name of the beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "<Filter name and location>",
+                "Description": "the remaining columns show each of the filters that have been configured in the system.  Placing a ‘y’ in the column adds a record in the Filter Process table, while a blank cell will result in the deletion of the record in the Filter Process table, if it exists.  Be careful when using this function as you can potentially make a mess of the Filter Process data!  If you have added a value, be sure to go to the Filter Process table afterwards to finish populating the record.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Yeast",
+        "Description": "While yeast is not actively planned in the system, it is used to constrain the ramp-up of brewing.\r",
+        "Nodes": [
+          {
+            "Name": "Yeast",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Name",
+                "Description": "a short unique code to identify the yeast (usually the SAP material number).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Description",
+                "Description": "a longer more descriptive name for the yeast.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Short Code",
+                "Description": "the short description for the material.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "SKU",
+        "Description": "Finished goods (including tank beer)\r",
+        "Nodes": [
+          {
+            "Name": "SKU",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": " ‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record..\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Name",
+                "Description": "a short unique code to identify the SKU (usually the SAP material number).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Description",
+                "Description": "a longer more descriptive name for the SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Short Code",
+                "Description": "the short description for the material.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Brand",
+                "Description": "the brand name of the beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Pack",
+                "Description": "a short code used to describe the pack.  This is free text, so ensure the format is consistent across all SKUs. Used for reporting.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Pack Type",
+                "Description": "a short code used to describe the pack type, usually KEG, CAN, NRB, RG or PET.  This is free text, so ensure the format is consistent across all SKUs. Used for reporting.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Configuration",
+                "Description": "additional free text to describe the SKU pack configuration.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Variant",
+                "Description": "additional free text to describe the SKU format.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Core SKU",
+                "Description": "if this is a promotional SKU, then this is the code of the SKU that this is a variant of.  If this is a base/standard SKU then this would be the same as the SKU code.  (Used with the substitution functionality).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "CEB/Keg",
+                "Description": "if this is a returnable SKU, then this is the code of the CEB (crate full of empty bottles) or keg used.  This is used to define the empty container that comes back from the trade, and could be different to the container ion the BOM.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Crate",
+                "Description": "if this is a returnable bottle SKU, then this is the code of the crate used.  Again, it defines the empty crate that would come back from the trade.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Pallet",
+                "Description": "the code of the pallet used.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "HL per Pallet [Hl]",
+                "Description": "volume of beer in Hl on each pallet.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Cases per Hl",
+                "Description": "number of cases in Hl.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Standard Cost",
+                "Description": "standard cost of this SKU, used as a basis for calculation of other values. (This is the average of the SKU at Location Std Cost value)\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Weight per Pallet [kg]",
+                "Description": "weight of each SKU per pallet\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Stacking Height",
+                "Description": "number of pallets that can be stacked during transportation \r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Pallets per Truck",
+                "Description": "number of pallets that can be transported on a standard inter-depot truck.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Cover [days]",
+                "Description": "the default stock standard (in days of forward cover) for this SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Cover [weeks]",
+                "Description": "the default stock standard (in days of forward cover) for this.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Age [days]",
+                "Description": "the default maximum stock age (in days) for this SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Market",
+                "Description": "Type of market, DOM - domestic, EXP - Export, IMP - Import\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Promo",
+                "Description": "Promotion yes or no \r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "<Packline name and location>",
+                "Description": "the remaining columns show each of the packaging lines that have been configured in the system.  Placing a value in the column adds a record in the Packaging Process table with the value as packaging rate in Hl/hr, while a blank cell will result in the deletion of the record in the Packaging Process table, if it exists.  Be careful when using this function as you can potentially make a mess of the Packaging Process data!  If you have added a value, be sure to go to the Packaging Process table afterwards to finish populating the record. You cannot change the rate from this screen, since there may be multiple process records with different valid periods and different rates.  The value is only used when adding records, since there may be multiple process records with different valid periods and different rates.\t\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Other Product",
+        "Description": "These are returnable containers (bottles, crates, CEBs and Kegs)\r",
+        "Nodes": [
+          {
+            "Name": "OtherProduct",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": " ‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Name",
+                "Description": "a short unique code to identify the SKU (usually the SAP material number).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Description",
+                "Description": "a longer more descriptive name for the SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Short Code",
+                "Description": "the short description for the material.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Pack",
+                "Description": "a short code used to describe the pack.  This is free text, so ensure the format is consistent as for the SKUs. Used for reporting.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Pallet",
+                "Description": "type of pallet used for this container.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "HL per Pallet [Hl]",
+                "Description": "volume of beer in Hl on each pallet\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Cases per HL",
+                "Description": "number of cases in Hl.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Pallets per Load [PAL]",
+                "Description": "number of pallets that can be transported on a standard inter-depot truck\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Stacking Height",
+                "Description": "number of pallets that can be stacked during transportation \r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "<Other line name and location>",
+                "Description": "the remaining columns show each of the injection lines that have been configured in the system.  Placing a ‘y’ in the column adds a record in the Other Process table, while a blank cell will result in the deletion of the record in the Other Process table, if it exists.  Be careful when using this function as you can potentially make a mess of the Other Process data!  If you have added a value, be sure to go to the Other Process table afterwards to finish populating the record.\t\t\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Product Substitution",
+        "Description": "This is used to configure if an SKU can be sold to satisfy demand of a different SKU.  This is primarily used for promotional SKUs but can be used in other instances EG, if a different color crate is used.\r",
+        "Nodes": [
+          {
+            "Name": "ProductSubstitution",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "From Product",
+                "Description": "the SKU that can be sold as another.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "To Product",
+                "Description": "the SKU that is being substituted.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Validity\tfrom",
+                "Description": "the date from which this substitution can take place.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Validity to",
+                "Description": "the date to which this substitution can take place.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Cost",
+                "Description": "the penalty cost to be used by AP for this substitution.  If not populated, AP will use a default value.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Product Group",
+        "Description": "You can group products and add minimum production runs and frequencies.  This can be used to group small products (particularly exports where there is just a label change) together and ensure they can be produced together to optimize changeovers.  This functionality should be used judiciously as it can increase solve times dramatically.\r",
+        "Nodes": [
+          {
+            "Name": "ProductGroup",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product group",
+                "Description": "a short unique code to identify Product Group\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Description",
+                "Description": "detailed description of this group\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Volume [HL]",
+                "Description": "minimum total volume to be produced per week for all products in this group\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Volume [HL]",
+                "Description": "maximum total volume to be produced per week for all products in this group\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Cycle Period [wks]",
+                "Description": "minimum number of weeks between production runs for this group\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "FB at Brewery",
+        "Description": "Location specific data for ferment beer is maintained here.\r",
+        "Nodes": [
+          {
+            "Name": "FBatBrewery",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": " the long description of the product (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Code",
+                "Description": "the code of the ferment beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": " the long description of the location (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location Code",
+                "Description": "the location code of the brewery.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Weekly Holding Cost",
+                "Description": "a penalty cost representing the cost per week per HL to keep this in storage.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Std Cost",
+                "Description": "currently not used.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Inventory [Hl]",
+                "Description": "an absolute HL value used to constrain stock.  This is not normally used and is therefore set to 99999.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Inventory [Hl]",
+                "Description": "an absolute HL value used to ensure a minimum level of stock.  This is not normally used and is therefore set to 0.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Cover [days]",
+                "Description": "the minimum numbers of days of production required to be held in stock.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Age [days]",
+                "Description": "the maximum number of days this beer can be held in cellars when it is ready.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Liquid Production Leadtime [days]",
+                "Description": "total cellars process time (FV + SV).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "FV Production Leadtime [days]",
+                "Description": "number of days spent in FV.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "SV Production Leadtime [days]",
+                "Description": "numbers of days spent in SV.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Std Dilution",
+                "Description": "currently not used.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "BB at Brewery",
+        "Description": "Location specific data for bright beer is maintained here.\r",
+        "Nodes": [
+          {
+            "Name": "BBatBrewery",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": " the long description of the product (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Code",
+                "Description": "the code of the bright beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": " the long description of the location (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location Code",
+                "Description": "the location code of the brewery.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Weekly Holding Cost",
+                "Description": "a penalty cost representing the cost per week per HL to keep this in storage.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Std Cost",
+                "Description": "currently not used.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Inventory [Hl]",
+                "Description": "an absolute HL value used to constrain stock.  This is not normally used and is therefore set to 99999.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Inventory [Hl]",
+                "Description": "an absolute HL value used to ensure a minimum level of stock.  This is not normally used and is therefore set to 0.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Cover [days]",
+                "Description": "the minimum numbers of days of production required to be held in stock.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Age [days]",
+                "Description": "the maximum number of days this beer can be held in cellars when it is ready.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Yeast at Brewery",
+        "Description": "Location specific data for yeast beer is maintained here.\r",
+        "Nodes": [
+          {
+            "Name": "YeastatBrewery",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": "the code of the yeast.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the location code of the brewery.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Initial propagation batch",
+                "Description": "how much beer can be brewed in a week when starting from nothing, i.e. from an initial propagation of yeast.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Rampup factor",
+                "Description": "how much brewing can increase by from one week to the next in percentage.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "SKU at Location",
+        "Description": "Location specific data for finished goods is maintained here.\r",
+        "Nodes": [
+          {
+            "Name": "SKUatLocation",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": " the long description of the product (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Code",
+                "Description": "the code of the SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": " the long description of the location (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location Code",
+                "Description": "the location code of the depot.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Bulkfactor",
+                "Description": "the number of pallet spaces that one pallet of this product consumes at this depot.  E.g. for a half height pallet which allows storage of twice as many pallets, this value would be 0.5.  If warehouse capacity is defined using pallets stacked 3 high, and this SKU can only be stacked 2 high then the bulk factor would be 1.5\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Weekly Holding Cost",
+                "Description": "a penalty cost representing the cost per week per HL to keep this in storage.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Std Cost",
+                "Description": "currently not used.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Inventory [Hl]",
+                "Description": "an absolute HL value used to constrain stock.  This is not normally used and is therefore set to 99999.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Inventory [Hl]",
+                "Description": "an absolute HL value used to ensure a minimum level of stock.  This is not normally used and is therefore set to 0.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Cover Internal [days]",
+                "Description": "the minimum numbers of days of interdepot required to be held in stock.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Cover External [days]",
+                "Description": "the minimum numbers of days of sales required to be held in stock.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Age [days]",
+                "Description": "the maximum permitted age of this SKU\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Quarantine Leadtime [days]",
+                "Description": "the number of days this SKU is to be held in quarantine at this location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Preferred source",
+                "Description": "the brewery that should (under optimal conditions) supply this SKU to this location.  This is used for brewery stock planning in the packaging planners.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Cover External [weeks]",
+                "Description": "this is the stock standard used by the weekly planning system, and includes cycle stock.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Other Product at Location",
+        "Description": "Location specific data for containers is maintained here.\r",
+        "Nodes": [
+          {
+            "Name": "OtherProductatLocation",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": "the code of the SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the location code of the depot.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Bulkfactor",
+                "Description": "the number of pallet spaces that one pallet of this product consumes at this depot.  E.g. for a half height pallet which allows storage of twice as many pallets, this value would be 0.5.  If warehouse capacity is defined using pallets stacked 3 high, and this SKU can only be stacked 2 high then the bulk factor would be 1.5.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Weekly Holding Cost",
+                "Description": "a penalty cost representing the cost per week per HL to keep this in storage.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Std Cost",
+                "Description": "currently not used.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Inventory [Hl]",
+                "Description": "an absolute HL value used to constrain stock.  This is not normally used and is therefore set to 99999.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Inventory [Hl]",
+                "Description": "an absolute HL value used to ensure a minimum level of stock.  This is not normally used and is therefore set to 0.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Cover Internal [days]",
+                "Description": "the minimum numbers of days of interdepot required to be held in stock.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Cover External [days]",
+                "Description": "the minimum numbers of days of production required to be held in stock.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Age [days]",
+                "Description": "not used.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Brewhouse",
+        "Description": "This defines the brewhouses in use\r",
+        "Nodes": [
+          {
+            "Name": "Brewhouse",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Brewhouse",
+                "Description": "the name of the brewhouse.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the location code of the brewery.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Full Description",
+                "Description": "a longer more descriptive name for the brewhouse.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Operating Efficiency [%]\t",
+                "Description": "the operating efficiency of the brewhouse.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Capacity [hrs]",
+                "Description": "the factory hours per week available for brewing.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Overtime Capacity [hrs]",
+                "Description": "the number of overtime hours per week available.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Regular Cost",
+                "Description": "the regular cost per hour to operate this brewhouse.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Overtime Cost",
+                "Description": "the cost per hour to work overtime.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Filter",
+        "Description": "This defines the filters in use\r",
+        "Nodes": [
+          {
+            "Name": "Filter",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Filter",
+                "Description": "the name of the filter.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the location code of the brewery.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Full Description",
+                "Description": "a longer more descriptive name for the filter.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Operating Efficiency [%]\t",
+                "Description": "the operating efficiency of the filter.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Capacity [hrs]",
+                "Description": "the factory hours per week available for filtration.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Overtime Capacity [hrs]",
+                "Description": "the number of overtime hours available per week.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Regular Cost",
+                "Description": "the regular cost per hour to operate this filter.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Overtime Cost",
+                "Description": "the cost per hour to work overtime.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Packaging Line",
+        "Description": "This defines the packaging lines in use.  This should include resources for re-packing SKUs, which should be configured as packaging lines with shift configurations.\r",
+        "Nodes": [
+          {
+            "Name": "PackagingLine",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Line",
+                "Description": "the name of the packaging line.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the location code of the brewery.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Full Description",
+                "Description": "a longer more descriptive name for the packaging line.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Operating Efficiency [%]\t",
+                "Description": "the operating efficiency of the line.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Capacity [hrs]",
+                "Description": "the maximum number of hours per week that this line can operate.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Regular Cost",
+                "Description": "the regular cost per hour to operate this line.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Overtime Cost",
+                "Description": "the cost per hour to work overtime.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Stock Location",
+                "Description": "the Name of the location where production output is placed.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Startup",
+                "Description": "Duration of line startup in hrs, used for scheduling only\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Line Fill",
+                "Description": "Duration of line fill in hrs, used for scheduling only\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "M&C",
+                "Description": "Duration of regular M & C in hrs, used for scheduling only\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Default M & C day",
+                "Description": "day in week when regular M & C usually takes place, used for scheduling only\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Machine Efficiency",
+                "Description": "used for scheduling only\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Shutdown",
+                "Description": "Duration of shutdown in hrs, used for scheduling only\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Sterilization Length [hr]",
+                "Description": "length of the line sterilization \r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Sterilization Frequency [hr]",
+                "Description": "frequency of the line sterilization \r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Other Line",
+        "Description": "Other lines primarily refer to container injection facilities, where glass and crates are brought together to form CEBs.  This can be used to represent manual (off-line) injection or in-line injection.  In the latter case the capacity will be representative, and not 100% accurate.\r",
+        "Nodes": [
+          {
+            "Name": "OtherLine",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Resource",
+                "Description": "the name of the resource.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the location code of the brewery/depot.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Full Description",
+                "Description": "a longer more descriptive name for the resource.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Operating Efficiency [%]\t",
+                "Description": "the operating efficiency of the resource.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Capacity [hrs]",
+                "Description": "the factory hours per week available for injection.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Overtime Capacity [hrs]",
+                "Description": "the number of overtime hours available per week.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Regular Cost",
+                "Description": "the regular cost per hour to operate this resource.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Overtime Cost",
+                "Description": "the cost per hour to work overtime.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Shift Configuration",
+        "Description": "In the AP model, packaging line manpower is modeled as a separate entity to the line itself, and is therefore specified separately.  This is primarily to accommodate the option of shared shifts between lines.  The AP model determines a proposed shift plan using these values.\r",
+        "Nodes": [
+          {
+            "Name": "ShiftConfiguration",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Name",
+                "Description": "the name of the shift configuration.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Full Description",
+                "Description": "a longer more descriptive name for the shift configuration.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Capacity Regular [hrs]",
+                "Description": "the number of regular production hours per week that this shift adds.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Capacity Overtime [hrs]",
+                "Description": "the number of overtime hours per week that this shift adds.  This can be negative to ensure that the total number is correct.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Fixed Cost",
+                "Description": "the cost per week to employ this shift.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "M & C [hrs]",
+                "Description": "the number of maintenance and cleaning hours required per week.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Manual nr of shifts MIN",
+                "Description": "the minimum number of shifts required per week.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Manual nr of shifts MAX",
+                "Description": "the maximum number of shifts allowed per week.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "<Packline name and location>",
+                "Description": "the remaining columns show each of the packaging lines that have been configured in the system.  Placing a ‘y’ value in the column links a shift configuration to a packaging line.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Brewhouse Process",
+        "Description": "This describes the parameters of the production of wort in a brewhouse, as well as the process through cellars.\r",
+        "Nodes": [
+          {
+            "Name": "BrewhouseProcess",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": " the long description of the product (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Code",
+                "Description": "the code of the ferment beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": " the long description of the location (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Brewhouse at Location",
+                "Description": "Identification of brewhouse.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location Code",
+                "Description": "the location code of the depot.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Brewhouse",
+                "Description": "the code of the brewhouse.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Version",
+                "Description": "there can be multiple versions of a process (identified by a number) but there can only be one process active at a time.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Valid from",
+                "Description": "the start date from which this process is active.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Valid to",
+                "Description": "the end date until which this process is valid.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Leadtime (rounded) [days]",
+                "Description": "the cellars process rounded to a whole week value.  When the fermentation and maturation duration is not a round week value, AP makes part of the beer available for filtration in one week and part in the following week.  For large volume products this is correct, however for small volume products we require a value rounded to the nearest full week dependent on whether the brand is usually brewed at the start of the week or at the end of the week.  This will ensure the full batch is available in one week rather than being split across two weeks.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Rate [Hl/hr]",
+                "Description": "the rate at which (high gravity) beer that can be brewed.  Determined as brewlength/cycle time.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Batch Size [Hl]",
+                "Description": "the volume that is brewed in one batch.  Can be the brewlength, or the vessel size.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Unit Cost",
+                "Description": "cost per Hl to brew this beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Efficiency Adjustment [%]",
+                "Description": "in the event that this brand has a negative impact on efficiency, an adjustment can be entered here.  This value will usually be 100%\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Brew Length [HL]",
+                "Description": "brew length in Hl.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "BP Component",
+        "Description": "Brewhouse process component describes the BOM and is generally limited to the yeast component.\r",
+        "Nodes": [
+          {
+            "Name": "BPComponent",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Brewhouse Process",
+                "Description": " unique id of brewhouse process.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location code",
+                "Description": "the code of the location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": " the long description of the location (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Brewhouse",
+                "Description": "Identification of brewhouse.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Code",
+                "Description": "code of the product.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Description",
+                "Description": " the long description of the product.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Version",
+                "Description": "the version number of the brewhouse process.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component",
+                "Description": "unique id of the material.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Inflow",
+                "Description": "the number of Hl required to produce 1Hl of Ferment beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Type",
+                "Description": "type of component (in this case only YST).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Short Code",
+                "Description": "hort description of the material.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Filter Process",
+        "Description": "This describes the process parameters of the filtration of beer to produce bright beer.  The system can accommodate the blending of multiple beers to produce an additional beer, with components and quantities defined here.\r",
+        "Nodes": [
+          {
+            "Name": "FilterProcess",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": " the long description of the product (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Code",
+                "Description": "the code of the bright beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the long description of the location (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Filter at Location",
+                "Description": "identify filter at location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location Code",
+                "Description": "the location code of the depot.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Filter",
+                "Description": "the code of the filter.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Version",
+                "Description": "there can be multiple versions of a process (identified by a number) but there can only be one process active at a time.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Valid from",
+                "Description": "the start date from which this process is active.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Valid to",
+                "Description": "the end date until which this process is valid.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Rate [Hl/hr]",
+                "Description": "the rate at which (high gravity) beer is filtered.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Batch Size [Hl]",
+                "Description": "the minimum volume that can be filtered in one batch.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Unit Cost",
+                "Description": "cost per Hl to filter this beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Machine Efficiency [%]",
+                "Description": "in the event that this beer has a negative impact on efficiency, an adjustment can be entered here.  This value will usually be 100%.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "FP Component",
+        "Description": "Filter process component describes the BOM.\r",
+        "Nodes": [
+          {
+            "Name": "FPComponent",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Filter Process",
+                "Description": " unique id of filter process.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location code",
+                "Description": "the code of the location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": " the long description of the location (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Filter",
+                "Description": "Identification of filter.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Code",
+                "Description": "code of the product.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Description",
+                "Description": " the longer description of the product.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Version",
+                "Description": "the version number of the filter process.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component",
+                "Description": "unique id of the component.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Inflow",
+                "Description": "the number of Hl required to produce 1Hl of product.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Type",
+                "Description": "type of component (usually FERB or BB).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Short Code",
+                "Description": "component short description.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Packaging Process",
+        "Description": "This describes the process parameters of the packaging of beer.  The system can accommodate the production of one way SKUS, returnable SKUs and SKUs that are re-packed from other finished goods with the components and quantities defined here.\r",
+        "Nodes": [
+          {
+            "Name": "PackagingProcess",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": " the long description of the product (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Code",
+                "Description": "the code of the SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the long description of the location (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Line at Location",
+                "Description": "Identify Line at location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location Code",
+                "Description": "the location code of the depot.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Line",
+                "Description": "the code of the packaging line.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Version",
+                "Description": "there can be multiple versions of a process (identified by a number) but there can only be one process active at a time.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Valid from",
+                "Description": "the start date from which this process is active.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Valid to",
+                "Description": "the end date until which this process is valid.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Base quantity [Hl]",
+                "Description": "o longer used.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Leadtime (rounded) [days]",
+                "Description": "number of days spent in process (usually 0).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Rate [Hl/hr]",
+                "Description": "the rate in Hl/hr at which the SKU is packaged.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Batch Size [Hl]",
+                "Description": "the minimum volume that can be packaged in one batch.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Unit Cost",
+                "Description": "cost per Hl to filter this beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Efficiency Adjustment [%]",
+                "Description": "in the event that this beer has a negative impact on efficiency, an adjustment can be entered here.  This value will usually be 100%\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Secondary resource",
+                "Description": "this is the code of a secondary line, used if production on this line uses a part of the other line, thereby blocking production on that line.  Blank if not required.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product group",
+                "Description": "used to identify if this process is part of a product group (blank if not).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Sanitation Length [hr]",
+                "Description": "length of the sanitation \r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Sanitation Frequency [hr]",
+                "Description": "frequency of the sanitation \r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "PP Component",
+        "Description": "Packaging process component describes the BOM.\r",
+        "Nodes": [
+          {
+            "Name": "PPComponent",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Packaging Process ",
+                "Description": " unique id of packaging process.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location code",
+                "Description": "the code of the location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": " the long description of the location (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Line",
+                "Description": "identification of line.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Code",
+                "Description": "code of the product.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Description",
+                "Description": " the longer description of the product.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Version",
+                "Description": "version number of the process.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component",
+                "Description": "unique id of the component (usually empties or bright beer).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Inflow",
+                "Description": "the number of Hl required to produce 1Hl of product (not that this value can be negative, eg if empty crates are created during the process).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Type",
+                "Description": "type of component (usually EMP or BB).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Short Code",
+                "Description": "component short description.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Other Process",
+        "Description": "This describes the parameters of the processes for combining bottles and empty crates to produce CEBs.\r",
+        "Nodes": [
+          {
+            "Name": "OtherProcess",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": " the code of the SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Other Line",
+                "Description": "identify other line at location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": " the location code of the depot.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production resource",
+                "Description": "the code of the production resource.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Version",
+                "Description": "there can be multiple versions of a process (identified by a number) but there can only be one process active at a time.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Valid from",
+                "Description": "the start date from which this process is active.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Valid to",
+                "Description": "the end date until which this process is valid.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Base quantity [Hl]",
+                "Description": "o longer used.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Rate [Hl/hr]",
+                "Description": "the rate in Hl/hr at which the CEBs are created.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Batch Size [Hl]",
+                "Description": "the minimum volume that can be packaged.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Unit Cost",
+                "Description": "cost per Hl of producing the CEB.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Efficiency Adjustment [%]",
+                "Description": "in the event that this material has a negative impact on efficiency, an adjustment can be entered here.  This value will usually be 100%.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "OP Component",
+        "Description": "Other process component describes the BOM.\r",
+        "Nodes": [
+          {
+            "Name": "OPComponent",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Packaging Process",
+                "Description": " unique id of filter process.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location code",
+                "Description": "the code of the location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": " the long description of the location (used for easy identification only and not saved).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Resource",
+                "Description": "Identification of other line.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Code",
+                "Description": "code of the product.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product Description",
+                "Description": " the longer description of the product.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Version",
+                "Description": "version number of the other process.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component",
+                "Description": "unique id of the component  usually empties).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Inflow",
+                "Description": "the number of Hl required to produce 1Hl of product (usually 1).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Type",
+                "Description": "type of component (usually EMP).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Component Short Code",
+                "Description": "component short description.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Demand Point",
+        "Description": "The AP models have separated customer demand from the depot to allow the ability to service customer demand from multiple depots or to allow the use of flexible sourcing.  The demand point is used to represent a group of customers, in a particular geographic area or with particular behavior, such as direct delivery.\r",
+        "Nodes": [
+          {
+            "Name": "DemandPoint",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Name",
+                "Description": "a short unique code to identify the demand point.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Description",
+                "Description": "a longer more descriptive name for the demand point.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Market",
+                "Description": "can be DOM(domestic), EXP(export when using IRG portal), EX (export without using IRG portal)\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Type",
+                "Description": "ID (indirect - demand point is sourced by depot replenishment) or DD (direct - sourced directly from brewery)\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "<Depot name>",
+                "Description": "the remaining columns show the configured depots and external warehouses in the system and is used when auto-populating the Demand Supply Allocation data.  Placing a value in the column adds records in the Demand Supply Allocation table with the value as supply in currency/Hl, while a blank cell will result in the deletion of the record in the Supply Allocation Table, if they exist.  \t\t\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Demand Allocation",
+        "Description": "This covers parameters describing SKUs at a demand point.  Records are created here when other objects are saved, so it is important to maintain this table to add missing data in the new records.\r",
+        "Nodes": [
+          {
+            "Name": "DemandAllocation",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": "the code of the SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Demand Point",
+                "Description": "the code of the demand point.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Service Level [%]",
+                "Description": "no longer used.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Unit Cost of Lost Sale (Default)",
+                "Description": " a penalty cost incurred when AP is unable to meet demand.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Backlog Penalty",
+                "Description": "the cost per Hl of carrying lost sales backlog (a value of 1 is usually used).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Use Backlog",
+                "Description": "whether backlog should be used (1) or not (0).\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Lead Time [Days]",
+                "Description": "only orders and not forecast will be used within the leadtime in the system, valid date is rounded to last whole week in case this number is negative, otherwise is not rounded.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Demand Supply Allocation",
+        "Description": "This is what links a demand allocation record to an SKU at location record, and is maintained automatically.\r",
+        "Nodes": [
+          {
+            "Name": "DemandSupplyAllocation",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": "the code of the SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Demand Point",
+                "Description": "the code of the demand point.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the code of the location supplying this demand point.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Leadtime [days]",
+                "Description": "the leadtime to perform this secondary distribution leg, this should be set to 0 days.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Unit Cost",
+                "Description": "the cost per Hl.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Supplier",
+        "Description": "A supplier can supply Ferment Beer or Bright Beer (in tankers), Finished Goods or new Containers for injection.\r",
+        "Nodes": [
+          {
+            "Name": "Supplier",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Supplier",
+                "Description": "the code of the supplier.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Description",
+                "Description": "a longer more descriptive name for the supplier.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max purchase qty",
+                "Description": "the maximum quantity this supplier can supply (in Hl).\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "FB Supplier Allocation",
+        "Description": "Parameters specific to the delivery of ferment beer to a location.\r",
+        "Nodes": [
+          {
+            "Name": "FBSupplierAllocation",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Supplier",
+                "Description": "the code of the supplier.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": "the code of the ferment beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the code of the location where this product is delivered.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Purchase Leadtime",
+                "Description": "the leadtime in days required.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Purchase Quantity [Hl]",
+                "Description": "the minimum quantity per week that can be purchased.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Purchase Quantity [Hl]",
+                "Description": "the maximum quantity per week that can be purchased.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Purchase Unit Cost",
+                "Description": "the cost per Hl.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "BB Supplier Allocation",
+        "Description": "Parameters specific to the delivery of bright beer to a location.\r",
+        "Nodes": [
+          {
+            "Name": "BBSupplierAllocation",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Supplier",
+                "Description": "the code of the supplier.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": "the code of the bright beer.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the code of the location where this product is delivered.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Purchase Leadtime",
+                "Description": "the leadtime in days required.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Purchase Quantity [Hl]",
+                "Description": "the minimum quantity per week that can be purchased.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Purchase Quantity [Hl]",
+                "Description": "the maximum quantity per week that can be purchased.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Purchase Unit Cost",
+                "Description": "the cost per Hl.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "SKU Supplier Allocation",
+        "Description": "Parameters specific to the delivery of finished goods to a location.\r",
+        "Nodes": [
+          {
+            "Name": "SKUSupplierAllocation",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Supplier",
+                "Description": "the code of the supplier.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": "the code of the SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the code of the location where this product is delivered.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Purchase Leadtime",
+                "Description": "the leadtime in days required.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Purchase Quantity [Hl]",
+                "Description": "the minimum quantity per week that can be purchased.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Purchase Quantity [Hl]",
+                "Description": "the maximum quantity per week that can be purchased.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Purchase Unit Cost",
+                "Description": "the cost per Hl.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Other Prod Supplier Allocation",
+        "Description": "Parameters specific to the delivery of ferment beer to a location.\r",
+        "Nodes": [
+          {
+            "Name": "OtherProdSupplierAllocation",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Supplier",
+                "Description": "the code of the supplier.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product",
+                "Description": "the code of the container.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Location",
+                "Description": "the code of the location where this product is delivered.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Purchase Leadtime",
+                "Description": "the leadtime in days required.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Purchase Quantity [Hl]",
+                "Description": "the minimum quantity per week that can be purchased. \r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Purchase Quantity [Hl]",
+                "Description": "the maximum quantity per week that can be purchased.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Purchase Unit Cost",
+                "Description": "the cost per Hl.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Route Matrix",
+        "Description": "This is the primary method for maintaining route details.  All depot Locations (including external warehouses) are listed across the top and down the side of the page. With “From” locations i.e. Sources being across the top and “To” i.e. destinations being down the side of the page. Each block has two cells; the type of route - ‘I’ for inter-brewery balancing and ‘t’ for inter-depot, the cost of a load on this route. When this data is saved it creates or deletes records or updates the costs of existing records in the Route table.  Be sure to go to the Route sheet after to add additional data.\r",
+        "Nodes": [
+          {
+            "Name": "RouteMatrix",
+            "Description": null,
+            "Nodes": []
+          }
+        ]
+      },
+      {
+        "Name": "Route",
+        "Description": "More detailed parameters for routes, or transport lanes.\r",
+        "Nodes": [
+          {
+            "Name": "Transfer",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Source",
+                "Description": "the code of the source depot.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Destination",
+                "Description": "the code of the destination depot.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Transport mode",
+                "Description": "the type of transport route, IBB - Inter-brewery balancing, Truck - Inter-depot, Tank - tankering.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Cost",
+                "Description": "the cost per load along this route, as above.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Min Transfer Quantity [Hl]",
+                "Description": "minimum volume (in Hl per week) that can be moved on this route.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Max Transfer Quantity [Hl]",
+                "Description": "maximum volume (in Hl per week) that can be moved on this route.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Transport Leadtime [days]",
+                "Description": " the time (in days) this route takes.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Has Return route?",
+                "Description": "used to configure if a route is an “Outbound” route and that the route in the opposite direction is a “Return” route.   This means that a route with the “Has return route?” flag set to 1 will be planned as normal, but the volume on the “Return” route (i.e. the opposite direction) will have volume constrained.  ,It is critical not to define both routes (i.e. A to B and B to A) as having returns routes, as this will force AP to plan exactly the same volume in both directions, always  For routes between breweries, only one should be configured as having a return route (the dominant one), or (preferably) neither so that movements can be freely planned by AP.  \r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Transfer",
+        "Description": "SKU specific parameters along a route.\r",
+        "Nodes": [
+          {
+            "Name": "Transfer",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Active",
+                "Description": "‘y’ active, ‘ ’(null) inactive, ‘d’ to delete the record.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Source",
+                "Description": "the code of the source depot.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Destination",
+                "Description": "the code of the destination depot.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Transport mode",
+                "Description": "the type of transport route, IBB - Inter-brewery balancing, Truck - Inter-depot, Tank - tankering.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Product\t",
+                "Description": "the code of the SKU or container.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Cost",
+                "Description": "the cost per Hl to move this product along this route.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Leadtime [days]",
+                "Description": " the time (in days) this route takes.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Is Empty",
+                "Description": "indicates if it is a route for empties - set 1 otherwise 0.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "IN <> CORE",
+        "Description": "This function is used to align master-data in the ISP database with the latest version in the iHub. This alignment can be done, by record, by table or total.  Selecting the table in the list at the top of the page displays all records and fields where there are differences in the lower half of the screen.  Selecting a row/s allows the user to align the selected row/s (with the Balance Selected button).  The Balance Table button aligns all records in the selected table, while the Balance All Tables button will align all master-data.  Use this function with caution, as it will overwrite all edits that you have made to the master-data! Masterdata Integrity Check The integrity check attempts to identify potential missing masterdata which could cause issues.  The drop down list is used to select the object and any possible errors are shown below.  Note, this is note a definitive list but merely shows potential errors.  It is important to investigate any records displayed.\r",
+        "Nodes": [
+          {
+            "Name": "IN<>CORE",
+            "Description": null,
+            "Nodes": [
+              {
+                "Name": "Demand Point x SKU",
+                "Description": "Demand Point x SKU in Forecast with no corresponding demand supply allocation.  \r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Demand supply allocation",
+                "Description": "Demand supply allocation records with no transfer supplying the location and no pack process or sku supply at the location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "SKU at Location",
+                "Description": "SKU at Location with no outbound transfer or demand supply allocation and is not used in repacking process.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Stock Location",
+                "Description": "Stock location missing in Location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Filtration process",
+                "Description": "Filtration process with no brew-house process for ferment beer components at same location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Pack process components",
+                "Description": "Pack process components with no bright beer in filtration processes at same location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "SKU in Forecast",
+                "Description": "SKU in forecast with no production process or SKU supplier allocation.  Can’t produce or buy the SKU.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Production Process",
+                "Description": "Production process with no filtration process for bright beer process at same location.\r",
+                "DbColumnName": null
+              },
+              {
+                "Name": "Filter process components",
+                "Description": "Filter process components with no ferment beer in BP components at same location.\r",
+                "DbColumnName": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
